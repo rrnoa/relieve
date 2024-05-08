@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Imágenes</title>
+    <style>
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            margin: 10px;
+            transition: all 0.3s;
+            text-align: center;
+            min-width: 120px;
+        }
+        .custom-file-upload:hover {
+            background-color: #ddd;
+        }
+        .hidden {
+            display: none;
+        }
+        #outputPixelBorder, #output, #outputBorder, #pixelated, #scene, #pixelatedMap, #depthMapOutput, #pixelatedMapScaled {
+            margin: 20px 0;
+            display: block; /* Changed to block for better spacing, adjust as needed */
+            width: 50%; /* Adjust width as needed */
+            height: auto; /* Adjust height as needed */
+            border: 1px solid #ccc; /* Optional, adds a border to the image display areas */
+            padding: 10px;
+            text-align: center; /* Centers content in the div, can remove if not necessary */
+        }
+        #img_depth img{
+            max-width: 80%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <label for="fileInput" class="custom-file-upload">Subir imagen</label>
+    <input type="file" id="fileInput" class="hidden" />
+
+    <label for="fileInputBordes" class="custom-file-upload">Subir Bordes</label>
+    <input type="file" id="fileInputBordes" class="hidden" />
+    
+    <label for="fileInputMap" class="custom-file-upload">Subir mapa</label>
+    <input type="file" id="fileInputMap" class="hidden" />
+
+
+    <div style="display: flex;">
+        <div id="output"></div>
+        <div id="outputBorder"></div>
+        <div id="outputPixelBorder"></div>
+    </div>
+
+<div id="img_depth" style="display: flex;">
+    <div id="depthMapOutput"></div>
+    <div id="pixelated"></div>
+    <div id="pixelatedMap"></div>
+    <div id="pixelatedMapScaled"></div>
+    <div id="imgSucia"></div>
+</div>
+
+<div id="scene"></div>
+
+<script src="app.js" type="module"></script>
+
+</body>
+</html>
